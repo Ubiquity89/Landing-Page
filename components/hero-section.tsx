@@ -17,7 +17,8 @@ export function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/60 to-navy/80" />
       </div>
       
       {/* Animated Gradient Orbs */}
@@ -125,7 +126,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="group h-14 rounded-full bg-gold px-8 text-lg font-semibold text-navy hover:bg-gold-light"
+              className="group h-14 rounded-full bg-white px-8 text-lg font-semibold text-navy shadow-lg hover:bg-white/90"
             >
               Start Your Journey
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -133,7 +134,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="h-14 rounded-full border-white/30 bg-white/10 px-8 text-lg font-semibold text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
+              className="h-14 rounded-full border-2 border-white bg-white/10 px-8 text-lg font-semibold text-white backdrop-blur-md hover:bg-white/20 hover:text-white"
             >
               <Play className="mr-2 h-5 w-5" />
               Watch Campus Tour
@@ -154,10 +155,10 @@ export function HeroSection() {
               { value: "95%", label: "Placement" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-gold sm:text-4xl">
+                <div className="text-3xl font-bold text-white sm:text-4xl drop-shadow-lg">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-sm text-white/70">{stat.label}</div>
+                <div className="mt-1 text-sm text-white/90 font-medium">{stat.label}</div>
               </div>
             ))}
           </motion.div>
