@@ -41,7 +41,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy text-gold transition-transform group-hover:scale-105">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-transform group-hover:scale-105">
               <GraduationCap className="h-5 w-5" />
             </div>
             <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-foreground" : "text-white"}`}>
@@ -55,8 +55,8 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors hover:text-gold ${
-                  isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"
+                className={`relative px-4 py-2 text-base font-medium transition-colors hover:text-primary ${
+                  isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -73,7 +73,7 @@ export function Navbar() {
             >
               Log in
             </Button>
-            <Button size="sm" className="rounded-full px-6 bg-gold text-navy hover:bg-gold-light">
+            <Button size="sm" className="rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90">
               Apply Now
             </Button>
           </div>
@@ -119,7 +119,7 @@ export function Navbar() {
                 <Button variant="outline" className="w-full">
                   Log in
                 </Button>
-                <Button className="w-full bg-gold text-navy hover:bg-gold-light">Apply Now</Button>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Apply Now</Button>
               </div>
             </div>
           </motion.div>
