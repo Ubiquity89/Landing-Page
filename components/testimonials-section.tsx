@@ -10,25 +10,22 @@ const testimonials = [
     name: "Priya Sharma",
     role: "B.Tech Computer Science, 2023",
     company: "Software Engineer at Google",
-    image: "/testimonials/person1.jpg",
     quote:
-      "Nova University transformed my career trajectory. The practical exposure, industry connections, and mentorship I received here were invaluable. I landed my dream job even before graduation.",
+      "JG Global University transformed my career trajectory. The practical exposure, industry connections, and mentorship I received here were invaluable. I landed my dream job even before graduation.",
     rating: 5,
   },
   {
     name: "Rahul Verma",
     role: "MBA Finance, 2022",
     company: "Investment Analyst at Goldman Sachs",
-    image: "/testimonials/person2.jpg",
     quote:
-      "The business school at Nova is exceptional. The case-study approach, global exposure through exchange programs, and networking opportunities prepared me for the competitive finance world.",
+      "The business school at JG Global is exceptional. The case-study approach, global exposure through exchange programs, and networking opportunities prepared me for the competitive finance world.",
     rating: 5,
   },
   {
     name: "Ananya Patel",
     role: "MBBS, 2021",
     company: "Resident Doctor at AIIMS",
-    image: "/testimonials/person3.jpg",
     quote:
       "The medical program here is rigorous yet supportive. State-of-the-art labs, experienced faculty, and hands-on clinical training gave me the confidence to excel in my residency.",
     rating: 5,
@@ -37,9 +34,8 @@ const testimonials = [
     name: "Arjun Kumar",
     role: "Ph.D Physics, 2020",
     company: "Research Scientist at CERN",
-    image: "/testimonials/person4.jpg",
     quote:
-      "The research ecosystem at Nova is world-class. I had access to cutting-edge facilities and collaboration opportunities that shaped my research career.",
+      "The research ecosystem at JG Global is world-class. I had access to cutting-edge facilities and collaboration opportunities that shaped my research career.",
     rating: 5,
   },
 ];
@@ -69,7 +65,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
             Student Success
           </span>
           <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
@@ -97,7 +93,7 @@ export function TestimonialsSection() {
               <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-xl lg:p-12">
                 {/* Quote Icon */}
                 <div className="absolute right-8 top-8 opacity-10">
-                  <Quote className="h-24 w-24 text-primary" />
+                  <Quote className="h-24 w-24 text-gold" />
                 </div>
 
                 <div className="relative">
@@ -107,7 +103,7 @@ export function TestimonialsSection() {
                       (_, i) => (
                         <Star
                           key={i}
-                          className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                          className="h-5 w-5 fill-gold text-gold"
                         />
                       )
                     )}
@@ -120,7 +116,7 @@ export function TestimonialsSection() {
 
                   {/* Author */}
                   <div className="mt-8 flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-xl font-bold text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-navy to-navy-light text-xl font-bold text-gold">
                       {testimonials[currentIndex].name.charAt(0)}
                     </div>
                     <div>
@@ -130,7 +126,7 @@ export function TestimonialsSection() {
                       <div className="text-sm text-muted-foreground">
                         {testimonials[currentIndex].role}
                       </div>
-                      <div className="text-sm font-medium text-primary">
+                      <div className="text-sm font-medium text-gold">
                         {testimonials[currentIndex].company}
                       </div>
                     </div>
@@ -145,7 +141,7 @@ export function TestimonialsSection() {
                 variant="outline"
                 size="icon"
                 onClick={prevTestimonial}
-                className="h-12 w-12 rounded-full"
+                className="h-12 w-12 rounded-full border-navy hover:bg-navy hover:text-gold"
               >
                 <ChevronLeft className="h-5 w-5" />
               </Button>
@@ -158,7 +154,7 @@ export function TestimonialsSection() {
                     onClick={() => setCurrentIndex(index)}
                     className={`h-2 w-2 rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? "w-8 bg-primary"
+                        ? "w-8 bg-gold"
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}
                   />
@@ -169,7 +165,7 @@ export function TestimonialsSection() {
                 variant="outline"
                 size="icon"
                 onClick={nextTestimonial}
-                className="h-12 w-12 rounded-full"
+                className="h-12 w-12 rounded-full border-navy hover:bg-navy hover:text-gold"
               >
                 <ChevronRight className="h-5 w-5" />
               </Button>
@@ -192,7 +188,7 @@ export function TestimonialsSection() {
               (company, index) => (
                 <div
                   key={index}
-                  className="text-xl font-bold text-muted-foreground/50 transition-colors hover:text-muted-foreground"
+                  className="text-xl font-bold text-muted-foreground/50 transition-colors hover:text-navy"
                 >
                   {company}
                 </div>

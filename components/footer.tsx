@@ -68,11 +68,11 @@ export function Footer() {
             {/* Brand Column */}
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-2">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy text-gold">
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <span className="text-xl font-bold tracking-tight">
-                  Nova<span className="gradient-text">University</span>
+                  JG<span className="gradient-text"> Global</span>
                 </span>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -87,7 +87,7 @@ export function Footer() {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-navy hover:text-gold"
                   >
                     <social.icon className="h-4 w-4" />
                   </Link>
@@ -123,7 +123,7 @@ export function Footer() {
         <div className="border-t border-border py-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Nova University. All rights reserved.
+              {new Date().getFullYear()} JG Global University. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

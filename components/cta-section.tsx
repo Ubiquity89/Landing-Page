@@ -31,7 +31,7 @@ export function CTASection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            <span className="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
               Get Started
             </span>
             <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
@@ -48,25 +48,25 @@ export function CTASection() {
             {/* Contact Info */}
             <div className="mt-10 space-y-4">
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy/10 text-navy">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Call Us</div>
-                  <div className="font-semibold">+1 (800) 123-4567</div>
+                  <div className="font-semibold">+91 (800) 123-4567</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy/10 text-navy">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email Us</div>
-                  <div className="font-semibold">admissions@novauniversity.edu</div>
+                  <div className="font-semibold">admissions@jgglobal.edu</div>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy/10 text-navy">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export function CTASection() {
                   <label className="mb-2 block text-sm font-medium">Phone</label>
                   <Input
                     type="tel"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 (555) 000-0000"
                     className="h-12 rounded-xl"
                   />
                 </div>
@@ -145,7 +145,7 @@ export function CTASection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-14 w-full rounded-xl text-lg"
+                  className="h-14 w-full rounded-xl text-lg bg-navy text-gold hover:bg-navy-light"
                 >
                   Submit Request
                   <ArrowRight className="ml-2 h-5 w-5" />

@@ -1,14 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 gradient-hero" />
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/campus.jpg"
+          alt="JG Global University Campus"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
+      </div>
       
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -23,7 +33,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-white/10 blur-3xl"
+          className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gold/10 blur-3xl"
         />
         <motion.div
           animate={{
@@ -36,26 +46,13 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/2 -left-40 h-96 w-96 rounded-full bg-white/10 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-white/5 blur-3xl"
+          className="absolute top-1/2 -left-40 h-96 w-96 rounded-full bg-gold/5 blur-3xl"
         />
       </div>
 
       {/* Grid Pattern Overlay */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
@@ -71,9 +68,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-medium text-gold backdrop-blur-sm">
               <Sparkles className="h-4 w-4" />
-              <span>Ranked #1 in Innovation 2024</span>
+              <span>NAAC A++ Accredited University</span>
             </div>
           </motion.div>
 
@@ -86,20 +83,20 @@ export function HeroSection() {
           >
             <span className="block text-balance">Shape Your Future at</span>
             <span className="mt-2 block text-balance">
-              Nova{" "}
-              <span className="relative">
-                University
+              JG{" "}
+              <span className="relative text-gold">
+                Global University
                 <motion.svg
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{ duration: 1, delay: 0.8 }}
                   className="absolute -bottom-2 left-0 w-full"
-                  viewBox="0 0 200 12"
+                  viewBox="0 0 300 12"
                   fill="none"
                 >
                   <motion.path
-                    d="M2 10C50 4 150 4 198 10"
-                    stroke="rgba(255,255,255,0.4)"
+                    d="M2 10C75 4 225 4 298 10"
+                    stroke="rgba(212,175,55,0.4)"
                     strokeWidth="4"
                     strokeLinecap="round"
                   />
@@ -128,7 +125,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="group h-14 rounded-full bg-white px-8 text-lg font-semibold text-primary hover:bg-white/90"
+              className="group h-14 rounded-full bg-gold px-8 text-lg font-semibold text-navy hover:bg-gold-light"
             >
               Start Your Journey
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -157,7 +154,7 @@ export function HeroSection() {
               { value: "95%", label: "Placement" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-white sm:text-4xl">
+                <div className="text-3xl font-bold text-gold sm:text-4xl">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-sm text-white/70">{stat.label}</div>

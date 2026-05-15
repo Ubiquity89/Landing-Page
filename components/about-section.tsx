@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { Award, BookOpen, Globe, Users } from "lucide-react";
 
 const features = [
@@ -46,7 +47,7 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            <span className="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
               About Us
             </span>
             <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
@@ -55,7 +56,7 @@ export function AboutSection() {
               <span className="gradient-text text-balance">Transforming Lives</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Founded in 1970, Nova University has been at the forefront of higher education, 
+              Founded in 1970, JG Global University has been at the forefront of higher education, 
               nurturing generations of leaders, innovators, and changemakers. Our commitment 
               to excellence extends beyond academics to holistic development.
             </p>
@@ -78,7 +79,7 @@ export function AboutSection() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                 >
-                  <div className="text-2xl font-bold text-primary sm:text-3xl">
+                  <div className="text-2xl font-bold text-navy sm:text-3xl">
                     {stat.value}
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground">
@@ -87,27 +88,62 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-10 overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/library.jpg"
+                alt="JG Global University Library"
+                width={600}
+                height={400}
+                className="w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Right Content - Feature Cards */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <feature.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+          <div className="flex flex-col gap-4">
+            {/* Top Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <Image
+                src="/images/classroom.jpg"
+                alt="JG Global University Classroom"
+                width={600}
+                height={300}
+                className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </motion.div>
+
+            {/* Feature Cards */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy/10 text-navy transition-colors group-hover:bg-navy group-hover:text-gold">
+                    <feature.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

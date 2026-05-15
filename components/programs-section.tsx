@@ -21,7 +21,7 @@ const programs = [
     description:
       "Computer Science, AI, Electronics, Mechanical, and Civil Engineering programs with cutting-edge labs.",
     courses: ["B.Tech", "M.Tech", "Ph.D"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-navy to-navy-light",
   },
   {
     icon: Briefcase,
@@ -29,7 +29,7 @@ const programs = [
     description:
       "MBA, BBA, and specialized programs in Finance, Marketing, HR, and International Business.",
     courses: ["BBA", "MBA", "PGDM"],
-    color: "from-violet-500 to-purple-500",
+    color: "from-gold to-gold-light",
   },
   {
     icon: Stethoscope,
@@ -37,7 +37,7 @@ const programs = [
     description:
       "MBBS, Nursing, Pharmacy, and allied health sciences with state-of-the-art medical facilities.",
     courses: ["MBBS", "B.Pharm", "Nursing"],
-    color: "from-emerald-500 to-teal-500",
+    color: "from-emerald-600 to-teal-500",
   },
   {
     icon: Scale,
@@ -45,7 +45,7 @@ const programs = [
     description:
       "Comprehensive legal education with moot courts, internships, and expert faculty.",
     courses: ["BA LLB", "LLM", "Ph.D"],
-    color: "from-amber-500 to-orange-500",
+    color: "from-amber-600 to-orange-500",
   },
   {
     icon: Palette,
@@ -53,7 +53,7 @@ const programs = [
     description:
       "Creative programs in Fine Arts, Graphic Design, Animation, and Fashion Design.",
     courses: ["BFA", "B.Des", "MFA"],
-    color: "from-pink-500 to-rose-500",
+    color: "from-rose-600 to-pink-500",
   },
   {
     icon: Calculator,
@@ -61,7 +61,7 @@ const programs = [
     description:
       "Pure sciences, Applied Mathematics, Physics, Chemistry, and Life Sciences programs.",
     courses: ["B.Sc", "M.Sc", "Ph.D"],
-    color: "from-indigo-500 to-blue-500",
+    color: "from-indigo-600 to-blue-500",
   },
 ];
 
@@ -79,7 +79,7 @@ export function ProgramsSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="inline-block rounded-full bg-gold/10 px-4 py-1.5 text-sm font-medium text-gold">
             Academic Programs
           </span>
           <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
@@ -100,7 +100,7 @@ export function ProgramsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * index }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5"
             >
               {/* Gradient Background on Hover */}
               <div
@@ -137,7 +137,7 @@ export function ProgramsSection() {
 
                 {/* Learn More Link */}
                 <div className="mt-6">
-                  <button className="inline-flex items-center text-sm font-medium text-primary transition-colors hover:text-primary/80">
+                  <button className="inline-flex items-center text-sm font-medium text-navy transition-colors hover:text-gold">
                     Learn More
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -154,7 +154,7 @@ export function ProgramsSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 text-center"
         >
-          <Button size="lg" variant="outline" className="rounded-full px-8">
+          <Button size="lg" variant="outline" className="rounded-full px-8 border-navy text-navy hover:bg-navy hover:text-gold">
             View All Programs
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

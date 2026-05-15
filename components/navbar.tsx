@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#programs", label: "Programs" },
-  { href: "#stats", label: "Achievements" },
+  { href: "#stats", label: "Placements" },
   { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
@@ -33,7 +33,7 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -41,11 +41,11 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-transform group-hover:scale-105">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy text-gold transition-transform group-hover:scale-105">
               <GraduationCap className="h-5 w-5" />
             </div>
-            <span className="text-xl font-bold tracking-tight">
-              Nova<span className="gradient-text">University</span>
+            <span className={`text-xl font-bold tracking-tight ${isScrolled ? "text-foreground" : "text-white"}`}>
+              JG<span className="gradient-text"> Global</span>
             </span>
           </Link>
 
@@ -55,7 +55,9 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className={`relative px-4 py-2 text-sm font-medium transition-colors hover:text-gold ${
+                  isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
@@ -64,10 +66,14 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className={isScrolled ? "" : "text-white hover:text-white hover:bg-white/10"}
+            >
               Log in
             </Button>
-            <Button size="sm" className="rounded-full px-6">
+            <Button size="sm" className="rounded-full px-6 bg-gold text-navy hover:bg-gold-light">
               Apply Now
             </Button>
           </div>
@@ -75,7 +81,9 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground lg:hidden"
+            className={`flex h-10 w-10 items-center justify-center rounded-lg lg:hidden ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -111,7 +119,7 @@ export function Navbar() {
                 <Button variant="outline" className="w-full">
                   Log in
                 </Button>
-                <Button className="w-full">Apply Now</Button>
+                <Button className="w-full bg-gold text-navy hover:bg-gold-light">Apply Now</Button>
               </div>
             </div>
           </motion.div>
